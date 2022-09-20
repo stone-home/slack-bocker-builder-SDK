@@ -1,0 +1,112 @@
+{
+	"type": "view_submission",
+	"team": {
+		"id": "T99LHPS1L",
+		"domain": "sap-cx",
+		"enterprise_id": "E7RBBBXHB",
+		"enterprise_name": "SAP"
+	},
+	"user": {
+		"id": "W01AG1MNWHW",
+		"username": "i540619",
+		"name": "i540619",
+		"team_id": "T99LHPS1L"
+	},
+	"api_app_id": "A02QABVCN3A",
+	"token": "",
+	"trigger_id": "2832785025204.315697808054.fde4d77393a0fc28b58bcfcdd55e9acc",
+	"view": {
+		"id": "V02QEFV3UCT",
+		"team_id": "T99LHPS1L",
+		"type": "modal",
+		"blocks": [
+			{
+				"type": "section",
+				"block_id": "0u/+",
+				"text": {
+					"type": "plain_text",
+					"text": ":wave: Hi User, welcome to :alphabet-white-d::alphabet-white-b: Report Genertor App.",
+					"emoji": true
+				}
+			},
+			{
+				"type": "divider",
+				"block_id": "as1"
+			},
+			{
+				"type": "input",
+				"block_id": "dbrg",
+				"label": {
+					"type": "plain_text",
+					"text": "Fillup full DB name here",
+					"emoji": true
+				},
+				"optional": false,
+				"dispatch_action": false,
+				"element": {
+					"type": "plain_text_input",
+					"action_id": "dbname",
+					"multiline": false,
+					"dispatch_action_config": {
+						"trigger_actions_on": [
+							"on_enter_pressed"
+						]
+					}
+				}
+			},
+			{
+				"type": "context",
+				"block_id": "idc/",
+				"elements": [
+					{
+						"type": "plain_text",
+						"text": "APP Path: /iopsv2/prime_service/db_report_generator.py",
+						"emoji": true
+					}
+				]
+			}
+		],
+		"private_metadata": "",
+		"callback_id": "task_executor",
+		"state": {
+			"values": {
+				"dbrg": {
+					"dbname": {
+						"type": "plain_text_input",
+						"value": "c6ns8l-moethenne1-d1-db"
+					}
+				}
+			}
+		},
+		"hash": "1639311674.wAL8DRI2",
+		"title": {
+			"type": "plain_text",
+			"text": "My App",
+			"emoji": true
+		},
+		"clear_on_close": false,
+		"notify_on_close": false,
+		"close": {
+			"type": "plain_text",
+			"text": "Cancel",
+			"emoji": true
+		},
+		"submit": {
+			"type": "plain_text",
+			"text": "Submit",
+			"emoji": true
+		},
+		"previous_view_id": null,
+		"root_view_id": "V02QEFV3UCT",
+		"app_id": "A02QABVCN3A",
+		"external_id": "",
+		"app_installed_team_id": "T99LHPS1L",
+		"bot_id": "B02QB3CV6L8"
+	},
+	"response_urls": [],
+	"is_enterprise_install": false,
+	"enterprise": {
+		"id": "E7RBBBXHB",
+		"name": "SAP"
+	}
+}

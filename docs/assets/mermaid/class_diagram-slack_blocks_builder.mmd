@@ -1,0 +1,390 @@
+classDiagram
+class Formatter {
+  <<enum>>
+  +PlainText
+  +Markdown
+}
+
+class ColorScheme{
+  <<enum>>
+  +Primary
+  +Default
+  +Danger
+}
+
+class Sufface{
+  <<enum>>
+  +message
+  +home_tabs
+  +modals
+}
+
+class TextObject{
+  +type: string
+  +text: string
+  +emoji: bool
+  +verbatim: bool
+}
+
+class ConfirmationDialogObject{
+  +title: TextObject
+  +text: TextObject
+  +confirm: TextObject
+  +deny: TextObject
+  +style: string
+}
+
+class OptionObject{
+  +text: TextObject
+  +value: string
+  +description: TextObject
+  +url: string
+}
+
+class OptionGroupObject{
+  +label: TextObject
+  +options: List[OptionObject]
+}
+
+class FilterObject{
+  +include: List[string]
+  +exclude_external_shared_channels: bool
+  +exclude_bot_users: bool
+}
+
+class DispatchActionConfigurationObject{
+  +trigger_action_on: List[string]
+}
+
+class ButtonElement{
+  +type: string = button
+  +text: TextObject
+  +action_id: string
+  +url: string
+  +value: string
+  +style: string
+  +confirm: ConfirmationDialogObject
+}
+
+class CheckBoxElement{
+  +type: string = checkboxes
+  +action_id: string
+  +options: List[OptionObject]
+  +initial_options: List[OptionObject]
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class DatePickerElement{
+  +type: string = datepicker
+  +action_id: string
+  +placeholder: TextObject
+  +initial_date: string
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class ImageElement{
+  +type: string = image
+  +image_url: string
+  +alt_text: string
+}
+
+class StaticSelectMenuElement{
+  +type: string = static_select
+  +placeholder: TextObject
+  +action_id: string
+  +options: List[OptionObject]
+  +option_groups: List[OptionGroupObject]
+  +initial_options: List[OptionObject]
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class StaticMultiSelectMenuElement{
+  +type: string = multi_static_select
+  +max_selected_items: int
+}
+
+class ExternalDataSourceSelectMenuElement{
+  +type: string = external_select
+  +placeholder: TextObjec
+  +action_id: string
+  +min_query_length: int
+  +initial_options: List[OptionObject]
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class ExternalDataSourceMultiSelectMenuElement{
+  +type: string = multi_external_select
+  +max_selected_items: int
+}
+
+class UserListSelectMenuElement{
+  +type: string = user_select
+  +placeholder: TextObject
+  +action_id: string
+  +initial_users: List[string]
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class UserListMultiSelectMenuElement{
+  +type: string = user_select
+  +max_selected_items: int
+}
+
+class ConversationsListSelectMenuElement{
+  +type: string = conversations_select
+  +placeholder: TextHolder
+  +action_id: string
+  +initial_conversations: List[string]
+  +confirm: ConfirmationDialogObject
+  +filter: FilterObject
+  +response_url_enabled: bool
+  +focus_on_load: bool
+}
+
+class ConversationsListMultiSelectMenuElement{
+  +type: string = multi_conversations_select
+  +max_selected_items: int
+}
+
+class PublicChannelListSelectMenuElement{
+  +type: string = channels_select
+  +placeholder: TextObject
+  +action_id: str
+  +initial_channels: List[string]
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class PublicChannelListMultiSelectMenuElement{
+  +type: string = Multi_channels_select
+  +max_selected_items: int
+}
+
+class OverflowMenuElement{
+  +type: string = overflow
+  +action_id: string
+  +options: List[OptionObject]
+  +confirm: ConfirmationDialogObject
+}
+
+class PlainTextInputElement{
+  +type: string = plain_text_input
+  +action_id: string
+  +placeholder: TextObject
+  +initial_value: string
+  +multiline: bool
+  +min_length: int
+  +max_length: int
+  +dispatch_action_config: DispatchActionConfigurationObject
+  +focus_on_load: bool
+}
+
+class RadioButtonGroupElement{
+  +type: string = radio_button
+  +action_id: string
+  +options: List[OptionObject]
+  +initial_option: OptionObject
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class TimePickerElement{
+  +type: string = timepicker
+  +action_id: string
+  +placeholder: TextObject
+  +initial_time: string
+  +confirm: ConfirmationDialogObject
+  +focus_on_load: bool
+}
+
+class SelectMenusElement{
+  <<abc>>
+}
+
+class MultiSelectMenusElement{
+  <<abc>>
+}
+
+TextObject --> Formatter
+ConfirmationDialogObject --* TextObject : Mardown->Text
+ConfirmationDialogObject --> ColorScheme
+OptionObject --* TextObject
+OptionGroupObject --o OptionObject
+OptionGroupObject --* TextObject
+ButtonElement --* TextObject
+ButtonElement --* ConfirmationDialogObject
+CheckBoxElement --o OptionObject
+CheckBoxElement --* ConfirmationDialogObject
+DatePickerElement --* TextObject
+DatePickerElement --* ConfirmationDialogObject
+StaticSelectMenuElement --* TextObject
+StaticSelectMenuElement --o OptionObject
+StaticSelectMenuElement --o OptionGroupObject
+StaticSelectMenuElement --* ConfirmationDialogObject
+StaticMultiSelectMenuElement --|> StaticSelectMenuElement
+ExternalDataSourceSelectMenuElement --* TextObject
+ExternalDataSourceSelectMenuElement --o OptionObject
+ExternalDataSourceSelectMenuElement --* ConfirmationDialogObject
+ExternalDataSourceMultiSelectMenuElement --|> ExternalDataSourceSelectMenuElement
+UserListSelectMenuElement --* TextObject
+UserListSelectMenuElement --* ConfirmationDialogObject
+UserListMultiSelectMenuElement --|> UserListSelectMenuElement
+ConversationsListSelectMenuElement --* TextObject
+ConversationsListSelectMenuElement --* ConfirmationDialogObject
+ConversationsListSelectMenuElement --* FilterObject
+ConversationsListMultiSelectMenuElement --|> ConversationsListSelectMenuElement
+PublicChannelListSelectMenuElement --* TextObject
+PublicChannelListSelectMenuElement --*ConfirmationDialogObject
+PublicChannelListMultiSelectMenuElement --|> PublicChannelListSelectMenuElement
+OverflowMenuElement --o OptionObject
+OverflowMenuElement --* ConfirmationDialogObject
+PlainTextInputElement --* TextObject
+PlainTextInputElement --* DispatchActionConfigurationObject
+RadioButtonGroupElement --* ConfirmationDialogObject
+RadioButtonGroupElement --o OptionObject
+TimePickerElement --* TextObject
+TimePickerElement --* ConfirmationDialogObject
+
+SelectMenusElement <|-- StaticSelectMenuElement
+SelectMenusElement <|-- ExternalDataSourceSelectMenuElement
+SelectMenusElement <|-- UserListSelectMenuElement
+SelectMenusElement <|-- ConversationsListSelectMenuElement
+SelectMenusElement <|-- PublicChannelListSelectMenuElement
+
+MultiSelectMenusElement <|-- StaticMultiSelectMenuElement
+MultiSelectMenusElement <|-- ExternalDataSourceMultiSelectMenuElement
+MultiSelectMenusElement <|-- UserListMultiSelectMenuElement
+MultiSelectMenusElement <|-- ConversationsListMultiSelectMenuElement
+MultiSelectMenusElement <|-- PublicChannelListMultiSelectMenuElement
+
+class ActionBlock{
+  +type: string = actions
+  +elements: List[BlockElement]
+  +block_id: string
+  +edit_block_id(block_id)
+  #fetch_or_create_elements_affribute()
+  +add_element(block_element)
+}
+
+class ContextBlock{
+  +type: string = context
+  +elements: List[Union[TextObject, ImageElement]]
+  +block_id: string
+  +edit_block_id(block_id)
+  #fetch_or_create_elements_attribute()
+  +add_text_element(text, formatter)
+  +add_image_element(image_url, alt_text)
+}
+
+class DividerBlock{
+  +type: string = divider
+  +black_id: string
+  +edit_block_id(black_id)
+}
+
+class HeaderBlock{
+  +type: string = header
+  +text: TextObject
+  +black_id: string
+  +edit_text(text)
+  +edit_block_id(block_id)
+}
+
+class ImageBlock{
+  +type: string = image
+  +image_url: string
+  +alt_text: string
+  +title: TextObject
+  +block_id: string
+}
+
+class InputBlock{
+  +type: string = input
+  +label: TextObject
+  +element: Union[PlainTextInputElement, CheckBoxElement, RadioButtonGroupElement, SelectMenusElement, MultiSelectMenusElement, DatePickerElement]
+  +dispatch_action: bool
+  +block_id: string
+  +hint: TextObject
+  +optional: bool
+  +edit_element(element)
+  +edit_hint(hint)
+  +edit_label(label)
+  +edit_block_id(block_id)
+}
+
+class SectionBlock{
+  +type: srting = section
+  +text: TextObject
+  +block_id: string
+  +fields: List[TextObject]
+  +accessory: Union[ButtonElement, PlainTextInputElement, CheckBoxElement, RadioButtonGroupElement, SelectMenusElement, MultiSelectMenusElement, DatePickerElement, TimePickerElement]
+  +edit_text(text, formatter)
+  +edit_block_id(block_id)
+  +add_field(text, formatter)
+  +edit_accessory(block_element)
+}
+
+ActionBlock ..o ButtonElement
+ActionBlock ..o SelectMenusElement
+ActionBlock ..o OverflowMenuElement
+ActionBlock ..o DatePickerElement
+ContextBlock ..o TextObject
+ContextBlock ..o ImageElement
+HeaderBlock ..* TextObject
+ImageBlock ..* TextObject
+InputBlock ..* TextObject
+InputBlock ..o PlainTextInputElement
+InputBlock ..o CheckBoxElement
+InputBlock ..o RadioButtonGroupElement
+InputBlock ..o SelectMenusElement
+InputBlock ..o MultiSelectMenusElement
+InputBlock ..o DatePickerElement
+SectionBlock ..* TextObject
+SectionBlock ..o PlainTextInputElement
+SectionBlock ..o CheckBoxElement
+SectionBlock ..o RadioButtonGroupElement
+SectionBlock ..o SelectMenusElement
+SectionBlock ..o MultiSelectMenusElement
+SectionBlock ..o DatePickerElement
+SectionBlock ..o ButtonElement
+SectionBlock ..o TimePickerElement
+
+class BlockBuilder{
+  +blocks: list
+  +to_dict()
+  +to_json()
+  +add_section_block(text, text_formatter, block_id)
+  +add_action_block(block_id)
+  +add_context_block(block_id)
+  +add_divider_block(block_id)
+  +add_header_block(text, block_id)
+  +add_image_block(image_url, alt_text, title, block_id)
+  +add_input_block(label, element, dispatch_action, block_id, hint, optional)
+}
+
+class ModalBuilder{
+  +type: string = modal
+  +edit_title(title)
+  +edit_submit(submit)
+  +edit_close(close)
+  +edit_private_metadata(private_metadata)
+  +edit_callback_id(callback_id)
+  +edit_notify_on_close(notify_on_close)
+}
+
+class AppHomeBuilder{
+  +type: string = home
+}
+
+AppHomeBuilder --|> BlockBuilder
+ModalBuilder --|> BlockBuilder
+BlockBuilder --> ActionBlock
+BlockBuilder --> HeaderBlock
+BlockBuilder --> ImageBlock
+BlockBuilder --> InputBlock
+BlockBuilder --> SectionBlock

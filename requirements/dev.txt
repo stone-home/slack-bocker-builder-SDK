@@ -1,0 +1,8 @@
+-r prod.txt
+
+pylint >= 2.9.3
+pytest >= 6.2.4
+PIL-Tools >= 1.1.0
+pytest-cov >= 3.0.0
+twine >= 4.0.1
+setuptools >= 47.1.0

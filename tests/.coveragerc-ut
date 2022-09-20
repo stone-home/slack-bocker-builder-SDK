@@ -1,0 +1,7 @@
+# .coveragerc to control coverage.py
+[report]
+omit =
+    slack_block_builder/__init__.py
+    slack_block_builder/exception.py
+show_missing = True
+sort = Cover

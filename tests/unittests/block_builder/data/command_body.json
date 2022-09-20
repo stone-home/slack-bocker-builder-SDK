@@ -1,0 +1,17 @@
+{
+	"token": "",
+	"team_id": "T99LHPS1L",
+	"team_domain": "sap-cx",
+	"channel_id": "C02PJDCFS9K",
+	"channel_name": "cx-slackbot-dev-channel",
+	"user_id": "W01AG1MNWHW",
+	"user_name": "i540619",
+	"command": "/cx-test",
+	"text": "",
+	"api_app_id": "A02QABVCN3A",
+	"is_enterprise_install": "false",
+	"enterprise_id": "E7RBBBXHB",
+	"enterprise_name": "SAP",
+	"response_url": "https://hooks.slack.com/commands/T99LHPS1L/2830421906834/vxwnjpcQfE6hpbtxoIYdCjX8",
+	"trigger_id": "2815793599383.315697808054.f0a171efdce3b3df85e05a1c25a4b127"
+}

@@ -1,0 +1,59 @@
+{
+    "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "text": "You have a new request:\n*<fakeLink.toEmployeeProfile.com|Fred Enriquez - New device request>*",
+                "type": "mrkdwn"
+            }
+        },
+        {
+            "type": "section",
+            "fields": [
+                {
+                    "text": "*Type:*\nComputer (laptop)",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*When:*\nSubmitted Aut 10",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*Last Update:*\nMar 10, 2015 (3 years, 5 months)",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*Reason:*\nAll vowel keys aren't working.",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*Specs:*\n\"Cheetah Pro 15\" - Fast, really fast\"",
+                    "type": "mrkdwn"
+                }
+            ]
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "text": "Approce",
+                        "type": "plain_text",
+                        "emoji": true
+                    },
+                    "style": "primary"
+                },
+                {
+                    "type": "button",
+                    "text": {
+                        "text": "Deny",
+                        "type": "plain_text",
+                        "emoji": true
+                    },
+                    "style": "danger"
+                }
+            ]
+        }
+    ]
+}

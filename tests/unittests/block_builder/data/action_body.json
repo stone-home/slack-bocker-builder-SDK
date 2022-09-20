@@ -1,0 +1,72 @@
+{
+	"type": "block_actions",
+	"user": {
+		"id": "W01AG1MNWHW",
+		"username": "i540619",
+		"name": "i540619",
+		"team_id": "T99LHPS1L"
+	},
+	"api_app_id": "A02QABVCN3A",
+	"token": "",
+	"container": {
+		"type": "message",
+		"message_ts": "1639304516.001600",
+		"channel_id": "C02PJDCFS9K",
+		"is_ephemeral": true
+	},
+	"trigger_id": "2827480800341.315697808054.ef8e27c7e47d384d9c6eb9b730a6a925",
+	"team": {
+		"id": "T99LHPS1L",
+		"domain": "sap-cx",
+		"enterprise_id": "E7RBBBXHB",
+		"enterprise_name": "SAP"
+	},
+	"enterprise": {
+		"id": "E7RBBBXHB",
+		"name": "SAP"
+	},
+	"is_enterprise_install": false,
+	"channel": {
+		"id": "C02PJDCFS9K",
+		"name": "privategroup"
+	},
+	"state": {
+		"values": {
+			"dS6": {
+				"select_menu": {
+					"type": "static_select",
+					"selected_option": {
+						"text": {
+							"type": "plain_text",
+							"text": "Iopsv2",
+							"emoji": true
+						},
+						"value": "/iopsv2"
+					}
+				}
+			}
+		}
+	},
+	"response_url": "https://hooks.slack.com/actions/T99LHPS1L/2823730678070/igpKkLLxjN6EAVRNFD7PTaBR",
+	"actions": [
+		{
+			"type": "static_select",
+			"action_id": "select_menu",
+			"block_id": "dS6",
+			"selected_option": {
+				"text": {
+					"type": "plain_text",
+					"text": "Iopsv2",
+					"emoji": true
+				},
+				"value": "/iopsv2"
+			},
+			"placeholder": {
+				"type": "plain_text",
+				"text": "Select Optionals",
+				"emoji": true
+			},
+			"action_ts": "1639305117.570403"
+		}
+	]
+}

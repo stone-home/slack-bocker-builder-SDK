@@ -1,0 +1,99 @@
+{
+    "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "text": "[MT PROD]APJ_4_A.S. Test Environment",
+                "type": "plain_text"
+            },
+            "fields": [
+                {
+                    "text": "*Subscription ID:* \n value_1",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*Tenant:* value_2",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*Resource Group:* value_3",
+                    "type": "mrkdwn"
+                },
+                {
+                    "text": "*Go Live Time:* N/A",
+                    "type": "mrkdwn"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": {
+                "text": "Dynatrace Problems",
+                "type": "plain_text"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "text": "Problem: App 0, Env: 0, Infra: 0, svn: 0",
+                "type": "plain_text"
+            }
+        },
+        {
+            "type": "header",
+            "text": {
+                "text": "APPs",
+                "type": "plain_text"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "text": "Generate Database Report",
+                "type": "plain_text"
+            }
+        },
+        {
+            "type": "header",
+            "text": {
+                "text": "Links",
+                "type": "plain_text"
+            }
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "text": "Commerce Cloud",
+                        "type": "plain_text",
+                        "emoji": true
+                    },
+                    "url": "https://cp.me",
+                    "style": "primary"
+                },
+                {
+                    "type": "button",
+                    "text": {
+                        "text": "Automation Engine",
+                        "type": "plain_text",
+                        "emoji": true
+                    },
+                    "url": "https://ae.me",
+                    "style": "primary"
+                },
+                {
+                    "type": "button",
+                    "text": {
+                        "text": "Azure, url",
+                        "type": "plain_text",
+                        "emoji": true
+                    },
+                    "url": "https://az.me",
+                    "style": "primary"
+                }
+            ]
+        }
+    ]
+}
