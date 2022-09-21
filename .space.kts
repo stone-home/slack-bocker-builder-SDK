@@ -14,7 +14,6 @@ job("Hello World!") {
             }
         }
     }
-    git("slack_bocker_builder")
     container(displayName = "Say Hello", image = "ubuntu:20.04")
     {
     	shellScript {
