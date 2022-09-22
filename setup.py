@@ -12,8 +12,11 @@ def get_version():
 
 
 def get_description():
-    with open("README.md", "r") as fp:
-        return fp.read()
+    return """
+    There are a lot of message blocks that need to be built during on whole chatbot project.
+
+    For consistent behaviour on message constructive, Need a uniform blocks builder class for the whole project.
+    """
 
 
 setuptools.setup(
