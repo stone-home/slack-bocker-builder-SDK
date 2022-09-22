@@ -8,12 +8,12 @@ import setuptools
 
 
 def get_version():
-    if os.path.exists("version.txt"):
-        with open("version.txt", "r") as fp:
-            version = fp.read()
+    release_name = os.environ.get("ReleaseName", "release/v0.0.0")
+    version_array = release_name.split("/")
+    if len(version_array) == 2:
+        version = version_array[-1]
     else:
         version = "v0.0.0"
-    version = version.replace("v", "")
     return version
 
 
@@ -23,13 +23,13 @@ def get_description():
 
 
 setuptools.setup(
-    name="slack-block-builder",
+    name="slack-blocker-builder-SDK",
     version=get_version(),
-    author="Jiabo Shi",
-    author_email="jiabo.shi01@sap.com",
+    author="stone",
+    author_email="github@stone-bo.com",
     description="A utilized tool to construct a slack message block quickly",
     long_description=get_description(),
-    url="https://github.tools.sap/IO-ContentStore/content-script-slack-block-builder",
+    url="https://github.com/stone-home/slack-bocker-builder-SDK",
     python_requires=">=3.7",
     packages=setuptools.find_packages(),
     classifiers=[
