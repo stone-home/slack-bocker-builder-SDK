@@ -8,13 +8,7 @@ import setuptools
 
 
 def get_version():
-    release_name = os.environ.get("ReleaseName", "release/v0.0.0")
-    version_array = release_name.split("/")
-    if len(version_array) == 2:
-        version = version_array[-1]
-    else:
-        version = "v0.0.0"
-    return version
+    return os.environ.get("ReleaseVersion", "v0.0.0")
 
 
 def get_description():
